@@ -1,6 +1,5 @@
 import React from 'react';
 import CardView from '../views/CardView-router.js';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 export default class ViewList extends React.Component {
 
 constructor(props) {

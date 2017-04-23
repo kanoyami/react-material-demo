@@ -6,7 +6,7 @@ import {
 import LoveJobsWebFrame from './views/Frame.js';
 import ViewList from './controller/GetListController.js';
 import MoreInfo from  './controller/MoreInfoController.js'
-import Social from './views/Social.js'
+import SocialViewList from './controller/GetSocialListController.js'
 
 export default class MainRouter extends React.Component{
 	constructor(props){
@@ -21,7 +21,7 @@ export default class MainRouter extends React.Component{
   	<LoveJobsWebFrame url ={this.props.match.url} locate = {locate} />
     <Route exact path={'/'} component={ViewList}/>
     <Route exact path={'/home/:id?'} component={MoreInfo}/>
-    <Route exact path={'/social'} component={Social}/>
+    <Route exact path={'/social'} component={SocialViewList}/>
   </div>)
 	}
 }

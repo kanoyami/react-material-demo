@@ -28,7 +28,6 @@ componentWillMount = () =>{
     .then(response => response.json())
     .then(result =>{
         var content = result.pop();
-        console.log(content);
         this.setState({datas:result,content:content});})
     .catch(e => console.log("Oops, error", e))
 }

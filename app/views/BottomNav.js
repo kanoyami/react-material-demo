@@ -1,7 +1,6 @@
 import React from 'react';
 import {BottomNavigation, BottomNavigationItem} from 'material-ui/BottomNavigation';
 import Paper from 'material-ui/Paper';
-import IconLocationOn from 'material-ui/svg-icons/communication/location-on';
 import ActionHome from 'material-ui/svg-icons/action/home';
 import ImageCamera from 'material-ui/svg-icons/image/camera';
 import {
