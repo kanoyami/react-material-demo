@@ -3,9 +3,8 @@ import { render } from 'react-dom'
 import {
   BrowserRouter as Router,
   Route,
-  Link,
 } from 'react-router-dom';
-import Home from './Home.js'
+import MainRouter from './Main-router.js'
 import injectTapEventPlugin from 'react-tap-event-plugin'; 
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 injectTapEventPlugin();
@@ -15,7 +14,11 @@ class App extends React.Component{
         return(
   <MuiThemeProvider>         
   <Router>
-    <Route path="/:id?" component={Home}/>
+    <div>
+    <Route exact path="/" component={MainRouter}/>
+    <Route path={'/home/:id?'} component={MainRouter}/>
+    <Route path={'/social'} component={MainRouter}/>
+    </div>
   </Router>
   </MuiThemeProvider>              
         )

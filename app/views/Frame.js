@@ -9,10 +9,11 @@ import {
   Link,
   history
 } from 'react-router-dom';
-import MoreInfo from "./MoreInfo.js";
 import PubSub from 'pubsub-js'
 import IconButton from 'material-ui/IconButton';
-import {NavigationClose,NavigationMenu} from 'material-ui/svg-icons/';
+import NavigationClose from 'material-ui/svg-icons/navigation/close';
+import NavigationMenu from 'material-ui/svg-icons/navigation/menu';
+import BottomNav from './BottomNav.js'
 
 export default class LoveJobsWebFrame extends React.Component {
 
@@ -49,22 +50,23 @@ export default class LoveJobsWebFrame extends React.Component {
 
   render() {
     return (
-      <div>
-        <AppBar
+     <div> 
+        <AppBar 
           title="LoveJobs-Demo"
           iconElementLeft={this.switchIcon(this.state.switcher)}
-          onLeftIconButtonTouchTap = {this.switchActive(this.state.switcher)}/>
+          onLeftIconButtonTouchTap = {this.switchActive(this.state.switcher)}
+          style={{position:'fixed'}}/>
         <Drawer
           docked={false}
           width={200}
           open={this.state.open}
-          onRequestChange={(open) => this.setState({open})}
-        >
-          <MenuItem onTouchTap={this.handleClose}>Menu Item</MenuItem>
-          <MenuItem onTouchTap={this.handleClose}>Menu Item 2</MenuItem>
+          onRequestChange={(open) => this.setState({open})}>
+            <MenuItem onTouchTap={this.handleClose}>Menu Item</MenuItem>
+            <MenuItem onTouchTap={this.handleClose}>Menu Item 2</MenuItem>
         </Drawer>
-
+        <BottomNav url = {this.props.url} locate = {this.props.locate}/>
       </div>
+ 
     );
   }
 }

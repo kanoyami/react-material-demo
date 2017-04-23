@@ -1,6 +1,6 @@
 import React from 'react';
-import {Card, CardActions, CardHeader, CardText} from 'material-ui/Card';
-import FlatButton from 'material-ui/FlatButton';
+import {Card, CardActions, CardHeader,CardTitle, CardText} from 'material-ui/Card';
+import RaisedButton from 'material-ui/RaisedButton';
 import {
   BrowserRouter as Router,
   Route,
@@ -9,15 +9,16 @@ import {
 
 const CardView=(props,match)=>{
 return(
-  
-	<Card>
-    <CardHeader
-      title={props.data.title}
-      subtitle={props.data.content}/>
+
+	<Card style={{marginBottom:'4px'}}>
+    <CardTitle title={props.data.title} subtitle={props.data.type}/>
     <CardActions>
-    <Link to={'/'+props.data.id}>
-      <FlatButton label="More"/>
+    <CardText>{props.data.content}</CardText>
+    <div style={{height:'45px'}}>
+    <Link to={'/home/'+props.data.id}>
+    <RaisedButton style={{float:'right',marginRight:'12px'}} primary={true}  label="more"/>
     </Link>
+    </div>
     </CardActions>
   </Card>
   );

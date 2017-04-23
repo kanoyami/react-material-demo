@@ -8,7 +8,7 @@ constructor(props) {
     this.state = {datas:[]};
   }
 
-componentDidMount = ()=>{
+componentWillMount = ()=>{
 	fetch('./datas.json')
 	.then(response => response.json())
 	.then(results => {
@@ -21,7 +21,7 @@ componentDidMount = ()=>{
 render(){
 
 	return (
-		<div>
+		<div style={{paddingTop:'64px'}}>
 		{this.state.datas.map((data) =>
         <CardView key={data.id} data={data} />)}
         </div>
